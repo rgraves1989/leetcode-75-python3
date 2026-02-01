@@ -17,5 +17,5 @@ This repository contains my **Python 3 solutions** for the **LeetCode 75 Study P
 
 ## 🗂 Repository Structure
 
-Problems are organized by topic to match the LeetCode 75 study plan:
+Problems are organized by topic to match the LeetCode 75 study plan.
 
