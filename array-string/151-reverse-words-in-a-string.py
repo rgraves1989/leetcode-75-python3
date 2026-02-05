@@ -30,7 +30,7 @@ Example 3:
 
 Constraints:
 
-	- 1 <= s.length <= 104
+	- 1 <= s.length <= 10^4
 	- s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 	- There is at least one word in s.
 
