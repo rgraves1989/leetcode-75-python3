@@ -37,4 +37,5 @@ class Solution:
             prefix_sum += gain[i]
             max_alt = max(max_alt, prefix_sum)
 
+        # Return the maximum altitude achieved
         return max_alt
