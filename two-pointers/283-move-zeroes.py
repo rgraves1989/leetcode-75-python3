@@ -23,7 +23,6 @@ Constraints:
 
 """
 
-
 # Time complexity: O(N)
 # Space complexity: O(1)
 class Solution:
