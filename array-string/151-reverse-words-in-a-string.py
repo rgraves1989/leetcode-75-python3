@@ -36,11 +36,12 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N)
 # Space complexity: O(N)
 class Solution:
     def reverseWords(self, s: str) -> str:
-    	# Remove any leading, trailing & extra whitespace
+        # Remove any leading, trailing & extra whitespace
         trimmed = s.strip()
 
         # Split the string into an array of words

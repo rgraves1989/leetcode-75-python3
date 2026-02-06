@@ -21,7 +21,7 @@ Example 3:
 	Input: nums = [2,1,5,0,4,6]
 	Output: true
 	Explanation: One of the valid triplet is (1, 4, 5), because nums[1] == 1 < nums[4] == 4 < nums[5] == 6.
- 
+
 Constraints:
 
 	- 1 <= nums.length <= 5 * 10^5
@@ -29,11 +29,12 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N)
 # Space complexity: O(1)
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
-        lowest_num, second_lowest_num = float('inf'), float('inf')
+        lowest_num, second_lowest_num = float("inf"), float("inf")
 
         for curr_num in nums:
             if curr_num <= lowest_num:

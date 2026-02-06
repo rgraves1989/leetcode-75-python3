@@ -26,26 +26,32 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N)
 # Space complexity: O(N)
 class Solution:
-	def productExceptSelf(self, nums: List[int]) -> List[int]:
-		# Intialize our answer, prefix_product, and suffix_product arrays
-		size = len(nums)
-		answer, prefix_products, suffix_products = [1] * size, [1] * size, [1] * size
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # Intialize our answer, prefix_product, and suffix_product arrays
+        size = len(nums)
+        answer, prefix_products, suffix_products = [1] * size, [1] * size, [1] * size
 
-		# Pre-compute prefix and suffix product values
-		previous_prefix_val, previous_suffix_val = 1, 1
-		for num_index in range(size):
-			prefix_products[num_index] = previous_prefix_val * nums[num_index]
-			suffix_products[size - num_index - 1] = previous_suffix_val * nums[size - num_index - 1]
-			previous_prefix_val, previous_suffix_val = prefix_products[num_index], suffix_products[size - num_index - 1]
+        # Pre-compute prefix and suffix product values
+        previous_prefix_val, previous_suffix_val = 1, 1
+        for num_index in range(size):
+            prefix_products[num_index] = previous_prefix_val * nums[num_index]
+            suffix_products[size - num_index - 1] = (
+                previous_suffix_val * nums[size - num_index - 1]
+            )
+            previous_prefix_val, previous_suffix_val = (
+                prefix_products[num_index],
+                suffix_products[size - num_index - 1],
+            )
 
-		# Calculate answers using the prefix product to the left times the suffix product to the right of the current index
-		for num_index in range(size):
-			if num_index - 1 >= 0:
-				answer[num_index] *= prefix_products[num_index - 1]
-			if num_index + 1 < size:
-				answer[num_index] *= suffix_products[num_index + 1]
+        # Calculate answers using the prefix product to the left times the suffix product to the right of the current index
+        for num_index in range(size):
+            if num_index - 1 >= 0:
+                answer[num_index] *= prefix_products[num_index - 1]
+            if num_index + 1 < size:
+                answer[num_index] *= suffix_products[num_index + 1]
 
-		return answer
+        return answer

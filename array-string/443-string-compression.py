@@ -41,32 +41,33 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N)
 # Space complexity: O(1)
 class Solution:
-	def compress(self, chars: List[str]) -> int:
-		# Initialize read, write pointers as well as determine chars array length
-		write_ptr, read_ptr, chars_length = 0, 0, len(chars)
+    def compress(self, chars: List[str]) -> int:
+        # Initialize read, write pointers as well as determine chars array length
+        write_ptr, read_ptr, chars_length = 0, 0, len(chars)
 
-		# Loop until we've read the whole character array
-		while read_ptr < chars_length:
-			# Get the current character and initialize our counter
-			current_char, current_char_count = chars[read_ptr], 0
+        # Loop until we've read the whole character array
+        while read_ptr < chars_length:
+            # Get the current character and initialize our counter
+            current_char, current_char_count = chars[read_ptr], 0
 
-			# Count consecutive occurences of the current_char and advance our read pointer
-			while read_ptr < chars_length and chars[read_ptr] == current_char:
-				read_ptr += 1
-				current_char_count += 1
+            # Count consecutive occurences of the current_char and advance our read pointer
+            while read_ptr < chars_length and chars[read_ptr] == current_char:
+                read_ptr += 1
+                current_char_count += 1
 
-			# Write the character and advance the write pointer
-			chars[write_ptr] = current_char
-			write_ptr += 1
+            # Write the character and advance the write pointer
+            chars[write_ptr] = current_char
+            write_ptr += 1
 
-			# Only write current_char_count if > 1
-			if current_char_count > 1:
-				# Write each digit into the chars array and advance our write pointer
-				for digit in str(current_char_count):
-					chars[write_ptr] = digit
-					write_ptr += 1
+            # Only write current_char_count if > 1
+            if current_char_count > 1:
+                # Write each digit into the chars array and advance our write pointer
+                for digit in str(current_char_count):
+                    chars[write_ptr] = digit
+                    write_ptr += 1
 
-		return write_ptr
+        return write_ptr

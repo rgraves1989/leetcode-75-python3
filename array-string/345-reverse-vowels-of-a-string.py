@@ -24,12 +24,13 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N)
 # Space complexity: O(N)
 class Solution:
     def reverseVowels(self, s: str) -> str:
-        # Initialize vowel set, left and right pointers, 
-        vowels = set('aeiouAEUIO')
+        # Initialize vowel set, left and right pointers,
+        vowels = set("aeiouAEUIO")
         left_ptr, right_ptr, reverse_vowels_str = 0, len(s) - 1, list(s)
 
         # Loop until the left pointer passes the right pointer
@@ -43,7 +44,10 @@ class Solution:
                 right_ptr -= 1
 
             # Swap the left and right vowels and advance our pointers
-            reverse_vowels_str[left_ptr], reverse_vowels_str[right_ptr] = reverse_vowels_str[right_ptr], reverse_vowels_str[left_ptr]
+            reverse_vowels_str[left_ptr], reverse_vowels_str[right_ptr] = (
+                reverse_vowels_str[right_ptr],
+                reverse_vowels_str[left_ptr],
+            )
             left_ptr += 1
             right_ptr -= 1
 

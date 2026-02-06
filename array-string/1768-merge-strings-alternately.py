@@ -40,6 +40,7 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N + M)
 # Space complexity: O(N + M)
 class Solution:
@@ -48,7 +49,7 @@ class Solution:
 
         # Loop until we've reached the end word1 and word2
         while word1_ptr < len(word1) or word2_ptr < len(word2):
-        	# If we haven't reached the end of word1, merge the next character & advance the pointer
+            # If we haven't reached the end of word1, merge the next character & advance the pointer
             if word1_ptr < len(word1):
                 merged_chars.append(word1[word1_ptr])
                 word1_ptr += 1
