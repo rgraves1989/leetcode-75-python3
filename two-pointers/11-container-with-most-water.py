@@ -29,17 +29,18 @@ Constraints:
 
 """
 
+
 # Time complexity: O(N)
 # Space complexity: O(1)
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-    	# Set the left pointer to the beginning of the array and the right to the end
+        # Set the left pointer to the beginning of the array and the right to the end
         left, right = 0, len(height) - 1
         max_area = 0
 
         # Loop until the left pointer meets the right pointer
         while left < right:
-        	# Determine the current area & update max_area
+            # Determine the current area & update max_area
             width = right - left
             current_height = min(height[left], height[right])
             max_area = max(max_area, current_height * width)
