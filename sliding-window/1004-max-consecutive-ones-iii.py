@@ -32,21 +32,21 @@ Constraints:
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
         # Initialize our left pointer, zero count and maximum length
-        left, zero_count, max_len = 0, 0, 0
+        left_ptr, zero_count, max_len = 0, 0, 0
 
-        # Loop through the nums, moving our right pointer until the end of the array
-        for right in range(len(nums)):
-            # The next number is a zero
-            if nums[right] == 0:
+        # Advance the right pointer through the array
+        for right_ptr in range(len(nums)):
+            # The next number is a zero add it tour our count
+            if nums[right_ptr] == 0:
                 zero_count += 1
 
-            # Advance the left pointer until the number of zeroes is less than or equal to k
+            # Slide the left pointer until the number of zeroes <= k
             while zero_count > k:
-                if nums[left] == 0:
+                if nums[left_ptr] == 0:
                     zero_count -= 1
-                left += 1
+                left_ptr += 1
 
             # Keep track of the maximum window length
-            max_len = max(max_len, right - left + 1)
+            max_len = max(max_len, right_ptr - left_ptr + 1)
 
         return max_len
