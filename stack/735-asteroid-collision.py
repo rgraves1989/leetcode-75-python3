@@ -54,10 +54,10 @@ class Solution:
 
             # We have a collision, keep looping until no collisions occur
             while alive and stack and stack[-1] > 0 and asteroid < 0:
-                if stack[-1] < -asteroid:
+                if stack[-1] < abs(asteroid):
                     # Last asteroid is destroyed
                     stack.pop()
-                elif stack[-1] == -asteroid:
+                elif stack[-1] == abs(asteroid):
                     # Both asteroids are destroyed
                     stack.pop()
                     alive = False
@@ -65,7 +65,7 @@ class Solution:
                     alive = False
 
             # If the asteroid was not destroyed, add it to the stack
-            if loop:
+            if alive:
                 stack.append(asteroid)
 
         return stack
