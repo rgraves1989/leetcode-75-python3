@@ -34,6 +34,7 @@ Constraints:
 # Space complexity: O(1)
 class Solution:      
     def tribonacci(self, n: int) -> int:
+    	# Base cases
         if n == 0:
             return 0
         elif n == 1:
@@ -41,8 +42,8 @@ class Solution:
         elif n == 2:
             return 1
 
+        # For n >= 3, calculate the nth tribonacci number (tracked in the variable, c)
         a, b, c = 0, 1, 1
-
         for i in range(3, n + 1):
             a, b, c = b, c, a + b + c
 
