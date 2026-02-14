@@ -37,8 +37,8 @@ Constraints:
 """
 
 
-# Time complexity: O()
-# Space complexity: O()
+# Time complexity: O(N)
+# Space complexity: O(1)
 class Solution:
     def costToClimbStairs(
         self, index: int, cost_len: int, cost: List[int], cost_aggr: Optional[int]
